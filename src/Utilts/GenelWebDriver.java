@@ -6,7 +6,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeDriverService;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 
@@ -42,7 +41,7 @@ public class GenelWebDriver {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30)); //bütün webelement için geçerli
 
         driver.get("https://opencart.abstracta.us/index.php?route=account/login");
-
+        LoginTest();
 
     }
 
@@ -58,4 +57,16 @@ public class GenelWebDriver {
         driver.quit();
     }
 
+    void LoginTest() {
+
+        WebElement inputemail = driver.findElement(By.id("input-email"));
+        inputemail.sendKeys("ali5@gmail.com");
+
+        WebElement password = driver.findElement(By.id("input-password"));
+        password.sendKeys("123456");
+
+        WebElement loginbtn = driver.findElement(By.cssSelector("input[type='submit']"));
+        loginbtn.click();
+
+    }
 }
