@@ -15,7 +15,7 @@ import org.testng.annotations.Test;
       5- Bu işlemi 2 kez çalıştırarak eski haline getiriniz.
      */
 public class _03_EditAccount extends GenelWebDriver {
-    By edit = By.cssSelector("div[class='list-group']>:nth-child(2)");
+    By edit = By.linkText("Edit Account");
 
     By name=By.id("input-firstname");
 
