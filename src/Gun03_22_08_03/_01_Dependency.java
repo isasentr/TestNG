@@ -1,4 +1,4 @@
-package Gun03;
+package Gun03_22_08_03;
 //interview de soruluyor.  Testlere öncelikleri neye göre verirsin priority ve dependency ile veririm.
 //Nasıl kullanırsın.
 // 1-)priority =1 gibi sıralı rakamlar verirerek bununla çalışma sırası veririrm.
@@ -7,7 +7,6 @@ package Gun03;
 //      önce çağırıp sonra kendisi çalışır. Fakat 2 veya daha fazla tane var ise bağımlı olduğu metod o zaman çalışamaz.
 
 
-import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class _01_Dependency {

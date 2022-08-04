@@ -1,10 +1,9 @@
-package Gun02;
+package Gun02_22_08_02;
 
 import Utilts.GenelWebDriver;
 import Utilts.Tools;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.testng.Assert;
 import org.testng.annotations.Test;
 
 /*

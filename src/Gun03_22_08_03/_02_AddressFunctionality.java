@@ -1,17 +1,20 @@
-package Gun03;
+package Gun03_22_08_03;
 
 import Utilts.GenelWebDriver;
 import Utilts.Tools;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.Test;
+
+import java.util.List;
 
 /*
        Senaryo;
        1- Siteyi açınız.
        2- Adress Ekleyiniz.
        3- En son eklenen adresi edit yaparak ad ve soyadı değiştirip kaydediniz.
-       4- En son eklenen adresi siliniz.
+       4- En son  adresi siliniz.
  */
 public class _02_AddressFunctionality extends GenelWebDriver {
 
@@ -46,32 +49,58 @@ public class _02_AddressFunctionality extends GenelWebDriver {
         Select countryS = new Select(driver.findElement(country));
         countryS.selectByVisibleText("Turkey");
 
+//        wait.until(ExpectedConditions.stalenessOf(driver.findElement(By.cssSelector("select[id='input-zone']>option"))));
         Select state = new Select(driver.findElement(region));
         state.selectByVisibleText("Kastamonu");
         driver.findElement(defaultadress).click();
         driver.findElement(Continue).click();
         Tools.successMessageValidation();
     }
+//
+//    @Test(dependsOnMethods = {"addressfunc"})
+//    void editfunc() {
+//        driver.findElement(ediltlink).click();
+//        driver.findElement(name).clear();
+//        driver.findElement(name).sendKeys("isa");
+//        driver.findElement(surname).clear();
+//        driver.findElement(surname).sendKeys("ova");
+//        driver.findElement(defaultadressno).isSelected();
+//        driver.findElement(Continue).click();
+//        Tools.successMessageValidation();
+//    }
+//    @Test(dependsOnMethods = {"editfunc", "addressfunc"})
+//    void deletefunc() {
+//
+//            By adelete1 = By.xpath("//*[@id=\"content\"]/div[1]/table/tbody/tr[2]/td[2]/a[2]");
+//            driver.findElement(adelete1).click();
+
+//        Tools.successMessageValidation();
+//    }
 
     @Test(dependsOnMethods = {"addressfunc"})
-    void editfunc() {
-        driver.findElement(ediltlink).click();
+    void editadress() {
+        WebElement adressbook = driver.findElement(By.linkText("Address Book"));
+        adressbook.click();
+
+        List<WebElement> editall = driver.findElements(By.linkText("Edit"));//bütün editleir listeye ekledik
+        editall.get(editall.size() - 1).click();//burada en son editi seçtik ve tıkladık
+        System.out.println(editall.size());
+
         driver.findElement(name).clear();
-        driver.findElement(name).sendKeys("isa");
+        driver.findElement(name).sendKeys("is56a");
         driver.findElement(surname).clear();
-        driver.findElement(surname).sendKeys("ova");
+        driver.findElement(surname).sendKeys("ov66a");
         driver.findElement(defaultadressno).isSelected();
         driver.findElement(Continue).click();
         Tools.successMessageValidation();
     }
 
-    @Test(dependsOnMethods = {"editfunc", "addressfunc"})
-    void deletefunc() {
-
-            By adelete1 = By.xpath("//*[@id=\"content\"]/div[1]/table/tbody/tr[2]/td[2]/a[2]");
-            driver.findElement(adelete1).click();
-
-//        Tools.successMessageValidation();
-
+    @Test(dependsOnMethods = {"addressfunc", "editadress"})
+    void deletefuntion() {
+        List<WebElement> deleteall = driver.findElements(By.linkText("Delete"));//bütün editleir listeye ekledik
+        deleteall.get(deleteall.size() - 2).click();//burada en son editi seçtik ve tıkladık
+//kontrol koymak gerekir bazen defaulta denk geliyor.
+        Tools.Bekle(5);
+        Tools.successMessageValidation();
     }
 }

@@ -1,4 +1,4 @@
-package Gun01;
+package Gun01_22_08_01;
 /*
    Senaryo ;
      1- http://opencart.abstracta.us/index.php?route=account/login  sitesini açınız.
@@ -16,7 +16,6 @@ ali5@gmail.com
 import Utilts.GenelWebDriver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class _05_Ornek extends GenelWebDriver {

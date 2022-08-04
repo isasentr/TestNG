@@ -38,7 +38,7 @@ public class GenelWebDriver {
 
 //     Duration dr= Duration.ofSeconds(30);
         driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(30)); //sadece ana sayfa yüklenirken eb başta
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30)); //bütün webelement için geçerli
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5)); //bütün webelement için geçerli
 
         driver.get("https://opencart.abstracta.us/index.php?route=account/login");
         LoginTest();
