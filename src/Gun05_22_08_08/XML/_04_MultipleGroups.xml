@@ -1,0 +1,40 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Suite 1">
+    <test name="Test 1">
+
+        <!--hangi gruplar çalıştırılacak-->
+        <groups>
+                <run>
+                    <include name="SmokeTest"></include>
+                </run>
+        </groups>
+
+        <!--hangi gruplar çalıştırılacak-->
+
+        <classes>
+            <class name="Gun05_22_08_08._01_Groups"></class>
+        </classes>
+
+    </test>
+
+    <test name="Test 2">
+
+    <!--hangi gruplar çalıştırılacak-->
+    <groups>
+        <run>
+            <include name="Regression"></include>
+        </run>
+    </groups>
+
+    <!--hangi gruplar çalıştırılacak-->
+
+    <classes>
+        <class name="Gun05_22_08_08._01_Groups"></class>
+    </classes>
+
+    </test>
+
+
+
+
+</suite>
