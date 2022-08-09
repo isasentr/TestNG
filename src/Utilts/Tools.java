@@ -27,4 +27,12 @@ public class Tools {
             throw new RuntimeException(e);
         }
     }
+
+    public  static  double WebElementToDouble(WebElement e){
+        String result=e.getText();
+        result=result.replaceAll("[^0-9,a-z,.]","");
+return Double.parseDouble(result);
+    }
+
+
 }

@@ -17,7 +17,7 @@ import java.util.logging.Logger;
 
 public class ParametreliWebDriver {
 
-    public static WebDriver driver;
+    public WebDriver driver; // webdirever static idid paralel test yapmak için static kaldırdık. Bitanesinden kaynaklı
 
     public static WebDriverWait wait;
 
